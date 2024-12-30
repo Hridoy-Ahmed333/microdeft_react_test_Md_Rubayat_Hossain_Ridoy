@@ -16,14 +16,12 @@
   z-index: 2;
 }
 
-/* Mobile-first layout for form-container */
 .fst-form-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-/* Left section for the form */
 .fst-left-section {
   width: 100%;
   margin-bottom: 20px;
@@ -92,7 +90,6 @@
   cursor: pointer;
 }
 
-/* Right section */
 .fst-right-section {
   text-align: center;
   padding: 20px;
@@ -110,7 +107,6 @@
   margin: 0;
 }
 
-/* Tablet and larger screens */
 @media (min-width: 768px) {
   .fst-form-container {
     flex-direction: row;

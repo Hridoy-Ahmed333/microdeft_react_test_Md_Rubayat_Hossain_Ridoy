@@ -18,7 +18,10 @@ function Registration({ setSwitched }) {
     e.preventDefault();
     try {
       const data = await register(registrationData);
-      console.log("Registration Success:", data);
+      if (data?.status) {
+        setSwitched((switched) => !switched);
+        alert("Success fully loggedn in");
+      }
     } catch (error) {
       console.error(
         "Registration Error:",
@@ -83,7 +86,7 @@ function Registration({ setSwitched }) {
         </div>
         <div className="fst-right-section">
           <h1>WELCOME TO OUR WEBSITE!</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>You can find various types of courses in our website.</p>
         </div>
       </div>
     </div>

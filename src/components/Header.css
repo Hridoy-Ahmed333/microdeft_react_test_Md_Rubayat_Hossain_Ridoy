@@ -16,7 +16,6 @@
   font-weight: bold;
 }
 
-/* Menu toggle button */
 .menu-toggle {
   font-size: 1.5rem;
   background: none;
@@ -26,7 +25,6 @@
   display: inline-block;
 }
 
-/* Navigation links for mobile (hidden initially) */
 .nav-links {
   display: none;
   flex-direction: column;
@@ -50,12 +48,19 @@
   color: #ff416c;
 }
 
-/* Show the dropdown menu when open */
 .nav-links.open {
   display: flex;
 }
-
-/* Desktop styles (media query) */
+.logout-btn {
+  padding: 10px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border: none;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  width: 5rem;
+}
 @media (min-width: 768px) {
   .menu-toggle {
     display: none;
@@ -63,6 +68,8 @@
 
   .nav-links {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     position: static;
     flex-direction: row;
     background: none;

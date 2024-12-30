@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { login } from "../api/api";
+import { useNavigate } from "react-router-dom";
 
 function Login({ setSwitched }) {
+  const navigate = useNavigate();
   const [token, setToken] = useState("");
   const [loginData, setLoginData] = useState({
     email: "",
@@ -17,12 +19,18 @@ function Login({ setSwitched }) {
     e.preventDefault();
     try {
       const data = await login(loginData);
-      console.log(data.data.token);
+      if (data?.status) {
+        setLoginData({ email: "", password: "" });
+        navigate("/courses");
+      }
+      if (data?.status === false) {
+        alert('Failed! Attempt to read property "password" on null');
+      }
       setToken(data.data.token);
       localStorage.setItem("authToken", data.data.token);
-      console.log("Login Success:", data);
     } catch (error) {
       console.error("Login Error:", error.response?.data || error.message);
+      alert(error);
     }
   };
 

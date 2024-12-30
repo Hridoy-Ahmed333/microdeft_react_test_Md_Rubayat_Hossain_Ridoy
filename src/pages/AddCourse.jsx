@@ -21,8 +21,15 @@ function AddCourse() {
     }
     try {
       const data = await submitCourse(courseData, token);
-      console.log("Course Submission Success:", data);
       setErrorMessage("");
+      setCourseData({
+        title: "",
+        description: "",
+        badge_text: "",
+        badge_color: "",
+        instructor_name: "",
+      });
+      alert("Course added Successfully");
     } catch (error) {
       console.error(
         "Course Submission Error:",
