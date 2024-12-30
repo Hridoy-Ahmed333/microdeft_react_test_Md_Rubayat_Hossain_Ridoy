@@ -25,7 +25,7 @@ function ShowCourses() {
 
     fetchCourses();
   }, [token]);
-  console.log(courses);
+
   return (
     <div style={{ position: "relative", minHeight: "100vh", padding: "20px" }}>
       {!isAuthorized && !loading && <ErrorOverlay />}

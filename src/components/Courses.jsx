@@ -23,7 +23,7 @@ function Courses({ courses }) {
                 </span>
               </div>
               <div className="course-content">
-                <h2 className="course-title">{course.title}</h2>
+                <h2 className="title">{course.title}</h2>
                 <p className="course-description">{course.description}</p>
                 <p className="course-instructor">
                   <strong>Instructor:</strong> {course.instructor_name}

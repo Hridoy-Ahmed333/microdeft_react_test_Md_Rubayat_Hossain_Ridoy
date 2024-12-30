@@ -20,7 +20,7 @@ function Registration({ setSwitched }) {
       const data = await register(registrationData);
       if (data?.status) {
         setSwitched((switched) => !switched);
-        alert("Success fully loggedn in");
+        alert("Success fully Registered");
       }
     } catch (error) {
       console.error(

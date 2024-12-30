@@ -24,7 +24,6 @@ const apiRequest = async (endpoint, method, body, token = null) => {
 
     return await response.json();
   } catch (error) {
-    // console.error("API Error:", error.message);
     setTimeout(() => {
       alert(`Error: ${error.message}`);
     }, 0);
@@ -33,7 +32,6 @@ const apiRequest = async (endpoint, method, body, token = null) => {
   }
 };
 
-// Login function
 export const login = async (data) => {
   return await apiRequest("/login", "POST", data);
 };
@@ -46,7 +44,6 @@ export const submitCourse = async (courseData, token) => {
   return await apiRequest("/course", "POST", courseData, token);
 };
 
-// Fetch courses API
 export const fetchCoursesAPI = async (token) => {
   try {
     const response = await fetch(`${API_BASE_URL}/course`, {
@@ -62,7 +59,6 @@ export const fetchCoursesAPI = async (token) => {
     }
 
     const data = await response.json();
-    console.log(data);
     return {
       courses: data.data || [],
       isAuthorized: true,
