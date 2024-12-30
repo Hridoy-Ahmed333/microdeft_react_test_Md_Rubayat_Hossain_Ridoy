@@ -1,4 +1,4 @@
-.container {
+.sn-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -13,6 +13,7 @@
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   overflow: hidden;
+  z-index: 2;
 }
 
 /* Mobile-first layout for form-container */
@@ -34,7 +35,7 @@
   margin-bottom: 15px;
 }
 
-form {
+.fst {
   width: 100%;
 }
 
@@ -62,8 +63,9 @@ form {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.btn {
+.fst-btn {
   width: 100%;
+  max-width: 20rem;
   padding: 10px;
   background: linear-gradient(to right, #ff416c, #ff4b2b);
   border: none;
@@ -73,7 +75,7 @@ form {
   font-size: 1rem;
 }
 
-.btn:hover {
+.fst-btn:hover {
   background: linear-gradient(to left, #ff416c, #ff4b2b);
 }
 
@@ -91,19 +93,19 @@ form {
 }
 
 /* Right section */
-.right-section {
+.fst-right-section {
   text-align: center;
   padding: 20px;
   background: linear-gradient(to top right, #ff416c, #ff4b2b);
   color: white;
 }
 
-.right-section h1 {
+.fst-right-section h1 {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-.right-section p {
+.fst-right-section p {
   font-size: 1rem;
   margin: 0;
 }
@@ -115,7 +117,7 @@ form {
   }
 
   .fst-left-section,
-  .right-section {
+  .fst-right-section {
     width: 50%;
   }
 
@@ -124,15 +126,15 @@ form {
     padding: 20px;
   }
 
-  .right-section {
+  .fst-right-section {
     padding: 40px;
   }
 
-  .right-section h1 {
+  .fst-right-section h1 {
     font-size: 2rem;
   }
 
-  .right-section p {
+  .fst-right-section p {
     font-size: 1.2rem;
   }
 }

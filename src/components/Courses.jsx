@@ -1,41 +1,39 @@
+import "./Courses.css";
+
 function Courses({ courses }) {
   return (
-    <div>
-      <h1 style={{ color: "green" }}>Authorization Successful</h1>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+    <div className="courses-container">
+      <div className="courses-grid">
         {courses.length > 0 ? (
           courses.map((course) => (
-            <div
-              key={course.id}
-              style={{
-                border: "1px solid #ccc",
-                padding: "15px",
-                borderRadius: "10px",
-                width: "300px",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              }}
-            >
-              <h2>{course.title}</h2>
-              <p>{course.description}</p>
-              <p>
-                <strong>Instructor:</strong> {course.instructor_name}
-              </p>
-              <span
-                style={{
-                  display: "inline-block",
-                  backgroundColor: course.badge_color || "#ddd",
-                  color: "white",
-                  padding: "5px 10px",
-                  borderRadius: "5px",
-                  fontSize: "12px",
-                }}
-              >
-                {course.badge_text}
-              </span>
+            <div className="course-card" key={course.id}>
+              <div className="course-image-wrapper">
+                <img
+                  src={course.image || "https://via.placeholder.com/300"}
+                  alt={course.title}
+                  className="course-image"
+                />
+                <span
+                  style={{
+                    backgroundColor: course.badge_color || "#ddd",
+                  }}
+                  className="course-badge"
+                >
+                  {course.badge_text}
+                </span>
+              </div>
+              <div className="course-content">
+                <h2 className="course-title">{course.title}</h2>
+                <p className="course-description">{course.description}</p>
+                <p className="course-instructor">
+                  <strong>Instructor:</strong> {course.instructor_name}
+                </p>
+                <button className="course-button">View Detail</button>
+              </div>
             </div>
           ))
         ) : (
-          <p>No courses available</p>
+          <p className="no-courses">No courses available</p>
         )}
       </div>
     </div>

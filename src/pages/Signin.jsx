@@ -5,7 +5,7 @@ import Registration from "../components/Registration";
 function Signin() {
   const [switched, setSwitched] = useState(false);
   return (
-    <div>
+    <div className="sub-bd">
       {switched ? (
         <Registration setSwitched={setSwitched} />
       ) : (

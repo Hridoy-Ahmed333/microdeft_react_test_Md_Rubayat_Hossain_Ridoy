@@ -7,10 +7,12 @@ function Login({ setSwitched }) {
     email: "",
     password: "",
   });
+
   const handleSwitching = (e) => {
     e.preventDefault();
     setSwitched((switched) => !switched);
   };
+
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,29 +25,46 @@ function Login({ setSwitched }) {
       console.error("Login Error:", error.response?.data || error.message);
     }
   };
+
   return (
-    <div>
-      <h1>Login Form</h1>
-      <form onSubmit={handleLoginSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={loginData.email}
-          onChange={(e) =>
-            setLoginData({ ...loginData, email: e.target.value })
-          }
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={loginData.password}
-          onChange={(e) =>
-            setLoginData({ ...loginData, password: e.target.value })
-          }
-        />
-        <button type="submit">Login</button>
-      </form>
-      <div onClick={handleSwitching}>Want to Register?</div>
+    <div className="sn-container">
+      <div className="fst-form-container">
+        <div className="fst-left-section">
+          <h1>Login</h1>
+          <form className="fst" onSubmit={handleLoginSubmit}>
+            <div className="fst-input-group">
+              <input
+                type="email"
+                placeholder="Email"
+                value={loginData.email}
+                onChange={(e) =>
+                  setLoginData({ ...loginData, email: e.target.value })
+                }
+              />
+            </div>
+            <div className="fst-input-group">
+              <input
+                type="password"
+                placeholder="Password"
+                value={loginData.password}
+                onChange={(e) =>
+                  setLoginData({ ...loginData, password: e.target.value })
+                }
+              />
+            </div>
+            <button type="submit" className="fst-btn">
+              Login
+            </button>
+          </form>
+          <div className="switch" onClick={handleSwitching}>
+            Want to Register? <span>Sign Up</span>
+          </div>
+        </div>
+        <div className="fst-right-section">
+          <h1>WELCOME BACK!</h1>
+          <p>Login to continue exploring our website.</p>
+        </div>
+      </div>
     </div>
   );
 }

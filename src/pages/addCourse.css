@@ -1,0 +1,106 @@
+.background-container {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  min-width: 100%;
+  overflow: hidden;
+  background-image: url("../assets/cour.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
+  min-width: 100vw;
+}
+.background-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(34, 34, 34, 0.8);
+  z-index: 1;
+}
+
+.course-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 2;
+}
+
+.course-title2 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.course-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.course-input-group input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+}
+.course-input-group input::-webkit-input-placeholder {
+  color: #b4b2b2;
+}
+
+.course-btn {
+  padding: 10px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border: none;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.course-btn:disabled {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+}
+
+.course-btn:hover:not(:disabled) {
+  background: linear-gradient(to left, #ff416c, #ff4b2b);
+}
+
+.course-error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .course-container {
+    width: 70%;
+    max-width: 600px;
+    padding: 30px;
+  }
+
+  .course-title {
+    font-size: 2rem;
+  }
+
+  .course-btn {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

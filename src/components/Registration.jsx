@@ -24,15 +24,16 @@ function Registration({ setSwitched }) {
         "Registration Error:",
         error.response?.data || error.message
       );
+      alert(error);
     }
   };
 
   return (
-    <div className="container">
+    <div className="sn-container">
       <div className="fst-form-container">
         <div className="fst-left-section">
           <h1>Registration</h1>
-          <form onSubmit={handleRegistrationSubmit}>
+          <form className="fst" onSubmit={handleRegistrationSubmit}>
             <div className="fst-input-group">
               <input
                 type="text"
@@ -45,7 +46,6 @@ function Registration({ setSwitched }) {
                   })
                 }
               />
-              <i className="fas fa-user"></i>
             </div>
             <div className="fst-input-group">
               <input
@@ -59,7 +59,6 @@ function Registration({ setSwitched }) {
                   })
                 }
               />
-              <i className="fas fa-envelope"></i>
             </div>
             <div className="fst-input-group">
               <input
@@ -73,17 +72,16 @@ function Registration({ setSwitched }) {
                   })
                 }
               />
-              <i className="fas fa-lock"></i>
             </div>
-            <button type="submit" className="btn">
-              Login
+            <button type="submit" className="fst-btn">
+              Register
             </button>
           </form>
           <div className="switch" onClick={handleSwitching}>
             Already have an account? <span>Log In</span>
           </div>
         </div>
-        <div className="right-section">
+        <div className="fst-right-section">
           <h1>WELCOME TO OUR WEBSITE!</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>

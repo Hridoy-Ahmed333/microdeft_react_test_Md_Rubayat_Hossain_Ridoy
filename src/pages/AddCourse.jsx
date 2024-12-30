@@ -32,61 +32,69 @@ function AddCourse() {
   };
 
   return (
-    <div>
-      <h1>Course Form</h1>
-      <form onSubmit={handleCourseSubmit}>
-        <input
-          type="text"
-          placeholder="Title"
-          value={courseData.title}
-          onChange={(e) =>
-            setCourseData({ ...courseData, title: e.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          value={courseData.description}
-          onChange={(e) =>
-            setCourseData({ ...courseData, description: e.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="Badge Text"
-          value={courseData.badge_text}
-          onChange={(e) =>
-            setCourseData({ ...courseData, badge_text: e.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="Badge Color"
-          value={courseData.badge_color}
-          onChange={(e) =>
-            setCourseData({ ...courseData, badge_color: e.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="Instructor Name"
-          value={courseData.instructor_name}
-          onChange={(e) =>
-            setCourseData({
-              ...courseData,
-              instructor_name: e.target.value,
-            })
-          }
-        />
-        <button type="submit" disabled={!token}>
-          Submit Course
-        </button>
-      </form>
-      {!token && (
-        <p style={{ color: "red", marginTop: "10px" }}>
-          Log in to submit the course
-        </p>
-      )}
+    <div className="background-container">
+      <div className="course-container">
+        <h1 className="course-title2">Add Course</h1>
+        <form className="course-form" onSubmit={handleCourseSubmit}>
+          <div className="course-input-group">
+            <input
+              type="text"
+              placeholder="Title"
+              value={courseData.title}
+              onChange={(e) =>
+                setCourseData({ ...courseData, title: e.target.value })
+              }
+            />
+          </div>
+          <div className="course-input-group">
+            <input
+              type="text"
+              placeholder="Description"
+              value={courseData.description}
+              onChange={(e) =>
+                setCourseData({ ...courseData, description: e.target.value })
+              }
+            />
+          </div>
+          <div className="course-input-group">
+            <input
+              type="text"
+              placeholder="Badge Text"
+              value={courseData.badge_text}
+              onChange={(e) =>
+                setCourseData({ ...courseData, badge_text: e.target.value })
+              }
+            />
+          </div>
+          <div className="course-input-group">
+            <input
+              type="text"
+              placeholder="Badge Color"
+              value={courseData.badge_color}
+              onChange={(e) =>
+                setCourseData({ ...courseData, badge_color: e.target.value })
+              }
+            />
+          </div>
+          <div className="course-input-group">
+            <input
+              type="text"
+              placeholder="Instructor Name"
+              value={courseData.instructor_name}
+              onChange={(e) =>
+                setCourseData({
+                  ...courseData,
+                  instructor_name: e.target.value,
+                })
+              }
+            />
+          </div>
+          <button type="submit" className="course-btn" disabled={!token}>
+            Submit Course
+          </button>
+        </form>
+        {!token && <p className="course-error">Log in to submit the course</p>}
+      </div>
     </div>
   );
 }

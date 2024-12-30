@@ -24,7 +24,11 @@ const apiRequest = async (endpoint, method, body, token = null) => {
 
     return await response.json();
   } catch (error) {
-    console.error("API Error:", error.message || error);
+    // console.error("API Error:", error.message);
+    setTimeout(() => {
+      alert(`Error: ${error.message}`);
+    }, 0);
+
     return { error: error.message || "An unexpected error occurred" };
   }
 };
@@ -58,8 +62,9 @@ export const fetchCoursesAPI = async (token) => {
     }
 
     const data = await response.json();
+    console.log(data);
     return {
-      courses: data.courses || [],
+      courses: data.data || [],
       isAuthorized: true,
       error: null,
     };
